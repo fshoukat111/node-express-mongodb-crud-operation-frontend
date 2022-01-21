@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CrudService } from './core/services/crud/crud.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  articleList = [];
+
+  constructor(private crudService: CrudService) { }
+
+  ngOnInit(): void {
+    // this.getList();
+  }
+
+  getList() {
+    this.crudService.getArticlesList().subscribe((articleList) => {
+
+        this.articleList = articleList;
+        console.log(articleList)
+      
+    })
+  }
 }

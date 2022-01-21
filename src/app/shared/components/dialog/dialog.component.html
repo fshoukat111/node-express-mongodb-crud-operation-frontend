@@ -1,0 +1,15 @@
+<div class="form-edit">
+    <form>
+      <div class="form-row">
+        <input type="text" name="title" pInputText placeholder="Title" [(ngModel)]="editArticle.title"/>
+      </div>
+  
+      <div class="form-row">
+        <textarea pInputTextarea [(ngModel)]="editArticle.articleDescription" name="description" class="text-area"></textarea>
+      </div>
+
+      <div class="form-row-button">
+        <button (click)="updateArticle()" pButton pRipple type="button" label="Update" class="p-button-outlined p-button-secondary"></button>
+      </div>
+    </form>
+  </div>

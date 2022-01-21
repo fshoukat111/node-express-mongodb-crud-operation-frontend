@@ -1,0 +1,1 @@
+export * from "@app/modules/article/pages/articles/articles.component"

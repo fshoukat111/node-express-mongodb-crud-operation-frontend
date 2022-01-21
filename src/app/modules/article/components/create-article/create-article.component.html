@@ -1,0 +1,23 @@
+<h2 class="heading">Create Article</h2>
+<div class="form-edit">
+    <form #submitForm='ngForm'>
+        <div class="form-row">
+            <input type="text" name="title" pInputText placeholder="Enter Title" [(ngModel)]="article.title"
+                #nameRef='ngModel' required />
+            <small *ngIf="nameRef.invalid && nameRef.touched" id="title-help" class="p-error">Title is Required.</small>
+        </div>
+
+        <div class="form-row">
+            <textarea pInputTextarea pInputText placeholder="Enter Description" [(ngModel)]="article.articleDescription"
+                name="description" #descriptionRef="ngModel" class="text-area" required>
+            </textarea>
+            <small *ngIf="descriptionRef.invalid && descriptionRef.touched" id="description-help" class="p-error">Description is Required.</small>
+        </div>
+
+        <div class="form-row-button">
+            <button [disabled]="!submitForm.valid" type="button" (click)="createArticle(); submitForm.reset() " pButton
+                pRipple type="button" label="Submit" class="p-button-outlined p-button-secondary">
+            </button>
+        </div>
+    </form>
+</div>

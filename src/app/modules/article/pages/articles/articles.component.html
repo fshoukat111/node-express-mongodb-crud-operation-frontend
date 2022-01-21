@@ -1,0 +1,4 @@
+<app-create-article (postArticle)=postArticle($event)></app-create-article>
+<app-article-list [articleList]="articleList" (deleteArticleEvent)=deleteArticle($event);
+    (editArticleEvent)=editArticle($event)>
+</app-article-list>
